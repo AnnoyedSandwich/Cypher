@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 //Hill Cipher, letteres correspond to numbers based on ascii code
@@ -17,9 +16,9 @@ public class HillCipher {
         String[] inputArray = splitN(input);
         //for loop über inputArray teile, in jedem loop einmal die 2x1 matrix mit key multiplizieren
         StringBuilder encryptedString = new StringBuilder();
-        for (int i=0; i<inputArray.length; i++){
-            inputMatrix[0][0] = ((int) inputArray[i].charAt(0))-65;
-            inputMatrix[1][0] = ((int) inputArray[i].charAt(1))-65;
+        for (String s : inputArray) {
+            inputMatrix[0][0] = ((int) s.charAt(0)) - 65;
+            inputMatrix[1][0] = ((int) s.charAt(1)) - 65;
             encryptedString.append(encrypt(inputMatrix, keyMatrix));
         }
 
